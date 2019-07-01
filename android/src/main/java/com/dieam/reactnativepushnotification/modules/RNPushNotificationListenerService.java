@@ -50,25 +50,25 @@ public class RNPushNotificationListenerService extends FirebaseMessagingService 
             bundle.putString("message", bundle.getString("twi_body"));
         }
 
-        if (data != null) {
-            if (!bundle.containsKey("message")) {
-                bundle.putString("message", data.optString("alert", null));
-            }
-            if (!bundle.containsKey("title")) {
-                bundle.putString("title", data.optString("title", null));
-            }
-            if (!bundle.containsKey("sound")) {
-                bundle.putString("soundName", data.optString("sound", null));
-            }
-            if (!bundle.containsKey("color")) {
-                bundle.putString("color", data.optString("color", null));
-            }
+//         if (data != null) {
+//             if (!bundle.containsKey("message")) {
+//                 bundle.putString("message", data.optString("alert", null));
+//             }
+//             if (!bundle.containsKey("title")) {
+//                 bundle.putString("title", data.optString("title", null));
+//             }
+//             if (!bundle.containsKey("sound")) {
+//                 bundle.putString("soundName", data.optString("sound", null));
+//             }
+//             if (!bundle.containsKey("color")) {
+//                 bundle.putString("color", data.optString("color", null));
+//             }
 
-            final int badge = data.optInt("badge", -1);
-            if (badge >= 0) {
-                ApplicationBadgeHelper.INSTANCE.setApplicationIconBadgeNumber(this, badge);
-            }
-        }
+//             final int badge = data.optInt("badge", -1);
+//             if (badge >= 0) {
+//                 ApplicationBadgeHelper.INSTANCE.setApplicationIconBadgeNumber(this, badge);
+//             }
+//         }
 
         Log.v(LOG_TAG, "onMessageReceived: " + bundle);
 
