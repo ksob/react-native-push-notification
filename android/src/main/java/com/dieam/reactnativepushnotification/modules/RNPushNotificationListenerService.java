@@ -30,6 +30,10 @@ public class RNPushNotificationListenerService extends FirebaseMessagingService 
 
     @Override
     public void onMessageReceived(RemoteMessage message) {
+        Log.v(LOG_TAG, "Test: " + Build.VERSION.SDK_INT);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
+            Log.v(LOG_TAG, "Version match: " + Build.VERSION.SDK_INT);
+        }
         String from = message.getFrom();
         RemoteMessage.Notification remoteNotification = message.getNotification();
 
