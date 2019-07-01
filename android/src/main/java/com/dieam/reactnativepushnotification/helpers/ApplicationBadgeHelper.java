@@ -39,8 +39,8 @@ public class ApplicationBadgeHelper {
         if (null == componentName) {
             componentName = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName()).getComponent();
         }
-        //tryAutomaticBadge(context, number);
-        //tryLegacySamsungBadge(context, number);
+        tryAutomaticBadge(context, number);
+        tryLegacySamsungBadge(context, number);
     }
 
     private void tryAutomaticBadge(Context context, int number) {
