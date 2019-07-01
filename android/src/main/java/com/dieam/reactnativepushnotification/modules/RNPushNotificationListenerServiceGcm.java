@@ -27,6 +27,10 @@ public class RNPushNotificationListenerServiceGcm extends GcmListenerService {
 
     @Override
     public void onMessageReceived(String from, final Bundle bundle) { 
+        Log.v(LOG_TAG, "Test: " + Build.VERSION.SDK_INT);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
+            Log.v(LOG_TAG, "Version match: " + Build.VERSION.SDK_INT);
+        }
         JSONObject data = getPushData(bundle.getString("data"));
         // Copy `twi_body` to `message` to support Twilio
         if (bundle.containsKey("twi_body")) {
